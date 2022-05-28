@@ -1,8 +1,8 @@
 import Foundation
 
-struct AccountEntity {
-    var id: String
-    var name: String
-    var email: String
-    var password: String
+public struct AccountEntity {
+    public var id: String
+    public var name: String
+    public var email: String
+    public var password: String
 }
