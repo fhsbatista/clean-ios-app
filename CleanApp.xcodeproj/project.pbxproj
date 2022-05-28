@@ -6,8 +6,15 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE4E912E28427BAE00DC6F61 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E912D28427BAE00DC6F61 /* AddAccount.swift */; };
+		CE4E913028427E5E00DC6F61 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E912F28427E5E00DC6F61 /* AccountEntity.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CE4E9126284279FC00DC6F61 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4E912D28427BAE00DC6F61 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
+		CE4E912F28427E5E00DC6F61 /* AccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,8 @@
 		CE4E9127284279FC00DC6F61 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CE4E912D28427BAE00DC6F61 /* AddAccount.swift */,
+				CE4E912F28427E5E00DC6F61 /* AccountEntity.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -86,6 +95,7 @@
 				TargetAttributes = {
 					CE4E9125284279FC00DC6F61 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -122,6 +132,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4E913028427E5E00DC6F61 /* AccountEntity.swift in Sources */,
+				CE4E912E28427BAE00DC6F61 /* AddAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +265,7 @@
 		CE4E912B284279FC00DC6F61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -275,6 +288,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -282,6 +296,7 @@
 		CE4E912C284279FC00DC6F61 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
