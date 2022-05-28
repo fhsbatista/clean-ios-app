@@ -10,9 +10,8 @@ class RemoteAddAccount {
         self.httpClient = httpClient
     }
     
-    func add(data: AddAccountDTO) {
-        let data = try? JSONEncoder().encode(data)
-        httpClient.post(to: url, with: data)
+    func add(account: AddAccountDTO) {
+        httpClient.post(to: url, with: account.toData())
     }
 }
 
@@ -24,16 +23,15 @@ class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_http_client_with_correct_url() throws {
         let url = URL(string: "https://any-other-url.com")!
         let (sut, httpClientSpy) = makeSut(url: url)
-        sut.add(data: makeAddAccountDTO())
+        sut.add(account: makeAddAccountDTO())
         XCTAssertEqual(httpClientSpy.url, url)
     }
     
     func test_add_should_call_http_client_with_correct_values() throws {
         let (sut, httpClientSpy) = makeSut()
-        let dto = makeAddAccountDTO()
-        sut.add(data: makeAddAccountDTO())
-        let data = try? JSONEncoder().encode(dto)
-        XCTAssertEqual(httpClientSpy.data, data)
+        let account = makeAddAccountDTO()
+        sut.add(account: account)
+        XCTAssertEqual(httpClientSpy.data, account.toData())
     }
 }
 
