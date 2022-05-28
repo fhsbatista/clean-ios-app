@@ -1,8 +1,8 @@
 import Foundation
 
-public protocol DTO: Encodable {}
+public protocol Model: Encodable {}
 
-public extension DTO {
+public extension Model {
     func toData() -> Data? {
         return try? JSONEncoder().encode(self)
     }

@@ -7,7 +7,7 @@ public protocol AddAccount {
     )
 }
 
-public struct AddAccountDTO: DTO {
+public struct AddAccountDTO: Model {
     public var name: String
     public var email: String
     public var password: String
