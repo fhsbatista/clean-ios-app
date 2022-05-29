@@ -42,7 +42,7 @@ class RemoteAddAccountTests: XCTestCase {
         expect(
             sut,
             completeWith: .failure(.unexpected),
-            when: { httpClientSpy.completeWithData(Data("invalid_data".utf8)) }
+            when: { httpClientSpy.completeWithData(makeInvalidData()) }
         )
     }
     
@@ -76,6 +76,10 @@ extension RemoteAddAccountTests {
         }
         action()
         wait(for: [exp], timeout: 1)
+    }
+    
+    func makeInvalidData() -> Data {
+        return Data("invalid_data".utf8)
     }
     
     func makeAddAccountDTO() -> AddAccountDTO {
