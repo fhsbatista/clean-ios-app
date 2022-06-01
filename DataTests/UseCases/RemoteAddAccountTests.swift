@@ -72,21 +72,6 @@ extension RemoteAddAccountTests {
         return (sut, httpClientSpy)
     }
     
-    func checkMemoryLeak(
-        for instance: AnyObject,
-        file: StaticString = #filePath,
-        line: UInt = #line
-    ) {
-        addTeardownBlock{ [weak instance] in
-            XCTAssertNil(
-                instance,
-                "A memory leak has been detected. Instance is referencing itself somewhere",
-                file: file,
-                line: line
-            )
-        }
-    }
-    
     func expect(
         _ sut: RemoteAddAccount,
         completeWith expectedResult: Result<AccountEntity, DomainError>,
@@ -113,10 +98,6 @@ extension RemoteAddAccountTests {
         wait(for: [exp], timeout: 1)
     }
     
-    func makeInvalidData() -> Data {
-        return Data("invalid_data".utf8)
-    }
-    
     func makeAddAccountDTO() -> AddAccountDTO {
         return AddAccountDTO(
             name: "any_name",
@@ -124,40 +105,5 @@ extension RemoteAddAccountTests {
             password: "any_password",
             passwordConfirmation: "any_password"
         )
-    }
-    
-    func makeAccountEntity() -> AccountEntity {
-        return AccountEntity(
-            id: "any_id",
-            name: "any_name",
-            email: "any_email",
-            password: "any_password"
-        )
-    }
-    
-    class HttpClientSpy: HttpPostClient {
-        var url: URL?
-        var data: Data?
-        var completion: ((Result<Data, HttpError>) -> Void)?
-        var callsCount = 0
-        
-        func post(
-            to url: URL,
-            with data: Data?,
-            completion: @escaping (Result<Data, HttpError>) -> Void
-        ) {
-            self.url = url
-            self.data = data
-            self.completion = completion
-            self.callsCount += 1
-        }
-        
-        func completeWithError(_ error: HttpError) {
-            completion?(.failure(error))
-        }
-        
-        func completeWithData(_ data: Data) {
-            completion?(.success(data))
-        }
     }
 }

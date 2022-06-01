@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE25794228482B040058C9D9 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25794128482B040058C9D9 /* TestExtensions.swift */; };
+		CE25794428482B550058C9D9 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25794328482B550058C9D9 /* TestFactories.swift */; };
+		CE25794728482BA00058C9D9 /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25794628482BA00058C9D9 /* HttpClientSpy.swift */; };
+		CE25794928482BF10058C9D9 /* AccountEntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25794828482BF10058C9D9 /* AccountEntityFactory.swift */; };
 		CE4E912E28427BAE00DC6F61 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E912D28427BAE00DC6F61 /* AddAccount.swift */; };
 		CE4E913028427E5E00DC6F61 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E912F28427E5E00DC6F61 /* AccountEntity.swift */; };
 		CE4E913E28427EBF00DC6F61 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4E913628427EBE00DC6F61 /* Data.framework */; };
@@ -53,6 +57,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE25794128482B040058C9D9 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		CE25794328482B550058C9D9 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		CE25794628482BA00058C9D9 /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
+		CE25794828482BF10058C9D9 /* AccountEntityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntityFactory.swift; sourceTree = "<group>"; };
 		CE4E9126284279FC00DC6F61 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4E912D28427BAE00DC6F61 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 		CE4E912F28427E5E00DC6F61 /* AccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntity.swift; sourceTree = "<group>"; };
@@ -94,6 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE25794028482AC90058C9D9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE25794128482B040058C9D9 /* TestExtensions.swift */,
+				CE25794328482B550058C9D9 /* TestFactories.swift */,
+				CE25794828482BF10058C9D9 /* AccountEntityFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE25794528482B920058C9D9 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				CE25794628482BA00058C9D9 /* HttpClientSpy.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		CE4E910D2842794E00DC6F61 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +164,8 @@
 		CE4E914128427EBF00DC6F61 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE25794528482B920058C9D9 /* Http */,
+				CE25794028482AC90058C9D9 /* Helpers */,
 				CE4E915C2842A11500DC6F61 /* UseCases */,
 			);
 			path = DataTests;
@@ -378,7 +406,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE25794928482BF10058C9D9 /* AccountEntityFactory.swift in Sources */,
+				CE25794428482B550058C9D9 /* TestFactories.swift in Sources */,
+				CE25794728482BA00058C9D9 /* HttpClientSpy.swift in Sources */,
 				CE4E914328427EBF00DC6F61 /* RemoteAddAccountTests.swift in Sources */,
+				CE25794228482B040058C9D9 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
